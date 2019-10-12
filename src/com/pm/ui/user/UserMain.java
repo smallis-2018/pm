@@ -62,9 +62,7 @@ public class UserMain {
     private List<Goods> goodsList;
 
     public UserMain(User user) {
-        /*addGoodsButton = new JButton("上架商品");
-        editGoodsButton = new JButton("修改商品信息");
-        deleGoodsButton = new JButton("删除商品");*/
+
         personalButton = new JButton("个人中心");
         jTextField = new JTextField();
         jTextField.setPreferredSize(new Dimension (200,30));
@@ -108,11 +106,7 @@ public class UserMain {
 
 
         //加载组件
-        /*jp1.add(addGoodsButton);
-        jp1.add(editGoodsButton);
-        jp1.add(deleGoodsButton);*/
         jp1.add(personalButton);
-
         jp2.add(scrollPane);
         jp3.add(signIn);
         jp3.add(fristPageButton);
@@ -175,7 +169,7 @@ public class UserMain {
             String id = jTextField.getText();
             Order order = new Order();
             order.setCreateDate(new Date());
-            order.setCompDate(new Date());
+            order.setCompDate(null);
             order.setUserId(user.getId());
             order.setOsId(7);
             order.setId(new Random().nextInt(100000));

@@ -97,14 +97,12 @@ public class UOdetail extends JFrame {
                         Uorder.showData();
 
 
-                        JOptionPane.showMessageDialog(null,
-                                "操作成功");
+                        JOptionPane.showMessageDialog(null, "操作成功");
                         UOdetail.this.dispose();
                     } else {
 
 
-                        JOptionPane.showMessageDialog(null,
-                                "操作失败该订单不可取消");
+                        JOptionPane.showMessageDialog(null, "操作失败该订单不可取消");
                     }
                 } catch (Exception el) {
                     JOptionPane.showMessageDialog(null,

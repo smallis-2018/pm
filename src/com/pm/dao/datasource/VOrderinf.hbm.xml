@@ -36,7 +36,7 @@
                 <column name="create_date" sql-type="date"/>
             </key-property>
             <key-property name="compDate">
-                <column name="comp_date" sql-type="date" not-null="true"/>
+                <column name="comp_date" sql-type="date" not-null="false"/>
             </key-property>
             <key-property name="userId">
                 <column name="user_ID" sql-type="int(11)"/>

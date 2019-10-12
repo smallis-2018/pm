@@ -15,7 +15,7 @@
             <column name="create_date" sql-type="date"/>
         </property>
         <property name="compDate">
-            <column name="comp_date" sql-type="date" not-null="true"/>
+            <column name="comp_date" sql-type="date" not-null="false"/>
         </property>
         <property name="osId">
             <column name="os_id" sql-type="int(11)" not-null="true"/>

@@ -94,7 +94,6 @@ public class OrderProcess {
 
                 return false;
             else {
-                orderDAO.updateCDate(orderId);
                 orderDAO.updateOrderStatus(orderId, 3);
                 tx.commit();
                 return true;

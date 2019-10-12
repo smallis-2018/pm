@@ -2,7 +2,6 @@ package com.pm.dao.factory;
 
 import com.pm.dao.datasource.Order;
 import com.pm.dao.datasource.VOrderinfId;
-import com.pm.util.Tools;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
 
@@ -51,16 +50,7 @@ public class OrderDAO {
         query.setParameter(2,vOrderinfId.getoId());
         query.executeUpdate();
     }
-    //更新订单时间
-    public void updateCDate(int id){
-        Tools tool = new Tools();
-        Query query = session.createQuery(
-                "update Order set compDate=?1 where id=?2"
-        );
-        query.setParameter(1,tool.getNowDate());
-        query.setParameter(2,id);
-        query.executeUpdate();
-    }
+
     public void frozenOrderById(Order id){
         Query query = session.createQuery("update Order set osId = 5 where id = ?1");
         query.setParameter(1,id);
