@@ -175,7 +175,7 @@ public class UserMain {
             String id = jTextField.getText();
             Order order = new Order();
             order.setCreateDate(new Date());
-            order.setCompDate(new Date());
+            order.setCompDate(new Date(1970-1-1));
             order.setUserId(user.getId());
             order.setOsId(7);
             order.setId(new Random().nextInt(100000));

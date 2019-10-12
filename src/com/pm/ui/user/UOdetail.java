@@ -7,6 +7,9 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+
+
+
 public class UOdetail extends JFrame {
     private VOrderinfId vo;
     private UOrder Uorder;
@@ -47,8 +50,10 @@ public class UOdetail extends JFrame {
         JTCTime.setEnabled(false);
 
         JLETime=new JLabel("完成时间",JLabel.CENTER);
-
-        JTETime=new JTextField(vo.getCompDate()+"");
+        if(vo.getCompDate().toString().equals("1970-01-01"))
+            JTETime=new JTextField(" ");
+        else
+            JTETime=new JTextField(vo.getCompDate()+"");
         JTETime.setEnabled(false);
         JLStatus=new JLabel("订单状态",JLabel.CENTER);
         JTStatus=new JTextField(vo.getOsType());
@@ -94,6 +99,7 @@ public class UOdetail extends JFrame {
                     int ID = Integer.valueOf(vo.getoId());
                     OrderProcess op = new OrderProcess();
                     if (op.cancelOrder(ID) == true) {
+                        Uorder.setOrderList(vo.getUserId());
                         Uorder.showData();
 
 
@@ -127,6 +133,7 @@ public class UOdetail extends JFrame {
                     int ID = Integer.valueOf(vo.getoId());
                     OrderProcess op = new OrderProcess();
                     if (op.deleteOrder(ID) == true) {
+                        Uorder.setOrderList(vo.getUserId());
                         Uorder.showData();
                         JOptionPane.showMessageDialog(null, "操作成功该订单已删除");
                         UOdetail.this.dispose();
@@ -154,6 +161,7 @@ public class UOdetail extends JFrame {
                     int ID = Integer.valueOf(vo.getoId());
                     OrderProcess op = new OrderProcess();
                     if (op.accomplishOrder(ID) == true) {
+                        Uorder.setOrderList(vo.getUserId());
                         Uorder.showData();
                         JOptionPane.showMessageDialog(null, "操作成功该订单已完成");
                         UOdetail.this.dispose();

@@ -147,7 +147,7 @@ public class UOrder extends JFrame {
 
     public void go() {
 
-        setOrderList(loginUser);
+        setOrderList(loginUser.getId());
         initPageNumber();
         showData();
 
@@ -234,9 +234,9 @@ public class UOrder extends JFrame {
         }
     }
 
-    public void setOrderList(User user){
+    public void setOrderList(int id){
         OrderInfProcess orderInfProcess=new OrderInfProcess();
-        this.orderList=orderInfProcess.getOrderInfByUId(user.getId());
+        this.orderList=orderInfProcess.getOrderInfByUId(id);
     }
     /***
      *显示用户订单信息
